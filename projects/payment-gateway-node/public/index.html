@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePay - Professional Payment Gateway</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-shield-alt"></i> SecurePay
+                </a>
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="solutions.html">Solutions</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Secure Payment Processing</h1>
+                <p>Fast, reliable, and fully encrypted payment solutions for businesses of all sizes.</p>
+                <a href="#payment-section" class="btn-primary">Make a Payment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose SecurePay</h2>
+                <p>Industry-leading security with seamless payment experiences</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Bank-Level Security</h3>
+                    <p>256-bit encryption and PCI DSS Level 1 compliance for maximum data protection.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Process payments in seconds with our optimized infrastructure.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Global Coverage</h3>
+                    <p>Accept payments in 135+ currencies from customers worldwide.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Our team is always available to help with any payment issues.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section id="payment-section" class="payment-section">
+        <div class="container">
+            <div class="payment-container">
+                <div class="payment-header">
+                    <h2>Make a Payment</h2>
+                    <p>Secure, encrypted transaction processing</p>
+                </div>
+
+                <div id="message-container"></div>
+
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="currency">Select Currency</label>
+                        <div class="select-with-icon">
+                            <i class="fas fa-globe"></i>
+                            <select id="currency" name="currency">
+                                <option value="kes" selected>KES - Kenyan Shilling</option>
+                                <option value="usd">USD - US Dollar</option>
+                                <option value="eur">EUR - Euro</option>
+                                <option value="gbp">GBP - British Pound</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Payment Amount</label>
+                        <div class="input-with-icon">
+                            <span class="currency-symbol" id="currency-symbol">$</span>
+                            <input type="number" id="amount" name="amount" step="0.01" placeholder="Enter amount" required">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="card-element">Card Details</label>
+                        <div id="card-element" class="stripe-card-input"></div>
+                    </div>
+
+                    <button type="submit" id="pay-button">
+                        <span class="secure-icon"><i class="fas fa-lock"></i></span>
+                        Make Payment
+                    </button>
+                </form>
+
+                <div class="security-animation">
+                    <div class="security-animation-content">
+                        <div class="encryption-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="encryption-line">
+                            <div class="encryption-particles">
+                                <span class="particle"></span>
+                                <span class="particle"></span>
+                                <span class="particle"></span>
+                                <span class="particle"></span>
+                                <span class="particle"></span>
+                            </div>
+                        </div>
+                        <div class="lock-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+                    <div class="security-text">
+                        <span>256-bit SSL encryption</span>
+                        <span>PCI DSS Compliant</span>
+                    </div>
+                </div>
+
+                <div class="security-badges">
+                    <div class="badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>PCI DSS Compliant</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-lock"></i>
+                        <span>256-bit SSL</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Powered by Stripe</span>
+                    </div>
+                </div>
+
+                <div class="form-row agreement">
+                    <!-- Agreement content -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trusted by Thousands</h2>
+                <p>What our clients say about our payment solutions</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"SecurePay has transformed how we handle payments. Their system is intuitive, secure, and our customers love the seamless checkout experience."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>CEO, TechSolutions Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"After switching to SecurePay, our payment processing time reduced by 70%. Their customer support team is responsive and always ready to help."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                        <div>
+                            <h4>Michael Chen</h4>
+                            <p>CTO, Global Retail</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <i class="fas fa-shield-alt"></i> SecurePay
+                    </div>
+                    <p>Secure, reliable payment processing solutions for modern businesses.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="news.html">News & Updates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Solutions</h3>
+                    <ul>
+                        <li><a href="online-payments.html">Online Payments</a></li>
+                        <li><a href="recurring-billing.html">Recurring Billing</a></li>
+                        <li><a href="payment-links.html">Payment Links</a></li>
+                        <li><a href="fraud-protection.html">Fraud Protection</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="help-center.html">Help Center</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="documentation.html">API Documentation</a></li>
+                        <li><a href="status.html">System Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="legal-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="compliance.html">Compliance</a>
+                    <a href="security.html">Security</a>
+                </div>
+                <p class="copyright">© 2023 SecurePay. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Stripe - Will fetch the publishable key from the server
+        let stripe;
+        
+        // Fetch Stripe publishable key from server
+        async function initializeStripe() {
+            try {
+                const response = await fetch('/config');
+                const { publishableKey } = await response.json();
+                
+                // Initialize Stripe with the key from server
+                stripe = Stripe(publishableKey);
+                const elements = stripe.elements();
+
+                // Create and mount the card Element without postal code
+                const cardElement = elements.create('card', {
+                    hidePostalCode: true, // Disable postal code field
+                    style: {
+                        base: {
+                            color: '#32325d',
+                            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                            fontSize: '16px',
+                            '::placeholder': {
+                                color: '#aab7c4'
+                            }
+                        },
+                        invalid: {
+                            color: '#fa755a'
+                        }
+                    }
+                });
+                cardElement.mount('#card-element');
+                
+                // Initialize form submission handler
+                initPaymentForm(cardElement);
+                
+                // Start the security animation
+                startSecurityAnimation();
+            } catch (err) {
+                console.error('Failed to initialize Stripe:', err);
+                const messageContainer = document.getElementById('message-container');
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-message';
+                errorDiv.textContent = 'Unable to initialize payment system. Please try again later.';
+                messageContainer.innerHTML = '';
+                messageContainer.appendChild(errorDiv);
+            }
+        }
+        
+        // Mobile menu functionality
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Currency selector functionality
+        document.getElementById('currency').addEventListener('change', function() {
+            updateCurrencySymbol(this.value);
+        });
+        
+        function updateCurrencySymbol(currency) {
+            const symbolElement = document.getElementById('currency-symbol');
+            let symbol = 'KSh';
+            
+            switch(currency) {
+                case 'eur':
+                    symbol = '€';
+                    break;
+                case 'gbp':
+                    symbol = '£';
+                    break;
+                case 'usd':
+                    symbol = '$';
+                    break;
+                case 'kes':
+                default:
+                    symbol = '$';
+                    break;
+            }
+            
+            symbolElement.textContent = symbol;
+        }
+        
+        function startSecurityAnimation() {
+            const animation = document.querySelector('.security-animation');
+            animation.classList.add('animate');
+            
+            // Reset animation periodically
+            setInterval(() => {
+                animation.classList.remove('animate');
+                setTimeout(() => {
+                    animation.classList.add('animate');
+                }, 100);
+            }, 8000);
+        }
+        
+        function initPaymentForm(cardElement) {
+            document.getElementById('payment-form').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const form = e.target;
+                const amount = form.querySelector('#amount').value;
+                const currency = form.querySelector('#currency').value;
+                const messageContainer = document.getElementById('message-container');
+                const submitButton = form.querySelector('#pay-button');
+                
+                // Disable the submit button to prevent multiple submissions
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+
+                if (!amount || isNaN(amount) || amount <= 0) {
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'error-message';
+                    errorDiv.textContent = 'Please enter a valid payment amount.';
+                    messageContainer.innerHTML = '';
+                    messageContainer.appendChild(errorDiv);
+                    setTimeout(() => errorDiv.remove(), 5000);
+                    
+                    // Re-enable the submit button
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = '<span class="secure-icon"><i class="fas fa-lock"></i></span>Make Payment';
+                    return;
+                }
+
+                try {
+                    // Create a token using the card Element
+                    const { token, error } = await stripe.createToken(cardElement);
+
+                    if (error) {
+                        console.error('Token error:', error);
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'error-message';
+                        errorDiv.textContent = error.message;
+                        messageContainer.innerHTML = '';
+                        messageContainer.appendChild(errorDiv);
+                        setTimeout(() => errorDiv.remove(), 5000);
+                        
+                        // Re-enable the submit button
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = '<span class="secure-icon"><i class="fas fa-lock"></i></span>Make Payment';
+                        return;
+                    }
+
+                    // Send token, amount and currency to server
+                    const res = await fetch('/charge', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            stripeToken: token.id,
+                            amount: amount,
+                            currency: currency
+                        })
+                    });
+                    const result = await res.json();
+                    console.log('Server response:', result);
+
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = result.status === 'success' ? 'success-message' : 'error-message';
+                    messageDiv.textContent = result.message + (result.transaction_id ? ` Transaction ID: ${result.transaction_id}` : '');
+                    messageContainer.innerHTML = '';
+                    messageContainer.appendChild(messageDiv);
+
+                    if (result.status === 'success') {
+                        form.reset();
+                        cardElement.clear();
+                        updateCurrencySymbol('kes'); // Reset to default currency
+                        
+                        // Show success animation
+                        const successAnimation = document.createElement('div');
+                        successAnimation.className = 'success-checkmark';
+                        successAnimation.innerHTML = '<i class="fas fa-check-circle"></i>';
+                        messageContainer.appendChild(successAnimation);
+                    } else {
+                        setTimeout(() => messageDiv.remove(), 5000);
+                    }
+                } catch (err) {
+                    console.error('Fetch error:', err);
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'error-message';
+                    errorDiv.textContent = 'Payment processing error: ' + err.message;
+                    messageContainer.innerHTML = '';
+                    messageContainer.appendChild(errorDiv);
+                    setTimeout(() => errorDiv.remove(), 5000);
+                } finally {
+                    // Re-enable the submit button
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = '<span class="secure-icon"><i class="fas fa-lock"></i></span>Make Payment';
+                }
+            });
+        }
+        
+        // Initialize Stripe when the page loads
+        document.addEventListener('DOMContentLoaded', initializeStripe);
+
+        // Initialize with KES
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCurrencySymbol('kes');
+        });
+    </script>
+</body>
+</html>
